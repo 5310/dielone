@@ -37,6 +37,8 @@ body {
     overflow: hidden;
     /*background: #e6e6c6 url("../img/text_bg.jpg") repeat left top;*/
     padding: 2.0em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     margin: auto;
     max-width: 30em;
     /*
