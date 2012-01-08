@@ -19,12 +19,6 @@ body {
     margin: 0 auto;
 }
 
-#buffer {
-    margin: 0;
-    width: 100%;
-    padding: 0px;
-}
-
 /* The title block */
 #title, #title .label, #content, .tools {
     border-radius: 2px;
