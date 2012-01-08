@@ -1,88 +1,108 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset='utf-8'>
+<!DOCTYPE HTML>
+<html lang="en">
+    
+  <head>
+      
+    <meta charset="utf-8">
 
-  <title>5310/dielone @ GitHub</title>
+    <title>We All Die Alone</title>
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #0f0a0c;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #f0f5f3; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #f0f5f3; }
-    h3 { text-align: center; color: #f0f5f3; }
-    a { color: #f0f5f3; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
+    <link media="screen" rel="stylesheet" href="dielone.css">
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,300,600|Rammetto+One' rel='stylesheet' type='text/css'>
+    
+  </head>
+  
+  <body>
+      
+    
+    <div id="page">
 
-<body>
-  <a href="https://github.com/5310/dielone"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+      <div id="mid_panel">
+        <div id="buffer"></div>
+        <div id="title">
+          <div class="label">
 
-  <div id="container">
+            <!-- Game Title: edit this -->
+            <h1>We All Die <span class="red">Alone</span></h1>
+            <h2 id="staticsub">a short cyoa-noir, directed by Scio</h2>
+            <!-- End of Game Title -->
 
-    <div class="download">
-      <a href="https://github.com/5310/dielone/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/5310/dielone/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
+            <noscript><p class="noscript_message">This game requires 
+              Javascript.</p></noscript>
+            
+          </div>
+        </div>
+
+        <div id="content_wrapper">
+          <div id="content">
+          </div>
+          <a name="end_of_content"></a>
+        </div>
+
+        <div id="legal">
+          <!-- Your Copyright: edit this -->
+          <p>Content and additional software and design &copy; 2010 IDM.</p>
+          <!-- End of Your Copyright -->
+
+          <!-- This Copyright line must remain in your final file. -->
+          <p>
+            Parts of the software and design &copy; 2010 IDM. Undum is
+            available
+            <a href="http://github.com/idmillington/undum">here</a>.
+            Derivative works must include this copyright line and link.
+          </p>
+        </div>
+      </div>
+    </div> <!-- End of div.page -->
+
+    <!-- Holds UI elements that will be cloned and placed in the main
+         page. This block itself is always hidden. -->
+    <div id="ui_library">
+      <div id="quality" class="quality">
+        <span class="name" data-attr="name"></span>
+        <span class="value" data-attr="value"></span>
+      </div>
+
+      <div id="quality_group" class="quality_group">
+        <h2 data-attr="title"></h2>
+        <div class="qualities_in_group">
+        </div>
+      </div>
+
+      <div id="progress_bar" class="progress_bar">
+        <span class="name" data-attr="name"></span>
+        <span class="value" data-attr="value"></span>
+        <div class="progress_bar_track">
+          <div class="progress_bar_color" data-attr="width">
+          </div>
+        </div>
+        <span class="left_label" data-attr="left_label"></span>
+        <span class="right_label" data-attr="right_label"></span>
+      </div>
+
+      <hr id="turn_separator">
     </div>
 
-    <h1><a href="https://github.com/5310/dielone">dielone</a>
-      <span class="small">by <a href="https://github.com/5310">5310</a></span></h1>
-
-    <div class="description">
-      A belated and elongated Ludum Dare #22 cyoa-noir, written using Undum.
+    <!-- You don't need to have this block here, but it is defined in
+         the CSS file as hidden, so it is a good spot to hide content
+         you want to load from your game code. See the
+         tutorial.game.js file for details of how this is used. -->
+    <div id="content_library">
     </div>
 
+    <!-- Load the libraries we depend on -->
+    <script type="text/javascript" src="undum.custom.js"></script>
+
+    <!-- Change the name of this file. It is your main game file. -->
+    <script type="text/javascript" src="dielone.js"></script>
     
-
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>Sayantan Chaudhuri (sayantan.chaudhuri@gmail.com)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Sayantan Chaudhuri (sayantan.chaudhuri@gmail.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/5310/dielone/zipball/master">zip</a> or
-      <a href="https://github.com/5310/dielone/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/5310/dielone</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/5310/dielone">5310/dielone</a>
-    </div>
-
-  </div>
-
-</body>
+    <!-- Landing initializer -->
+    <script type="text/javascript" >
+        $('#buffer').css("margin", ($(window).height()-$('#title').outerHeight())/2+"px" );
+    </script>
+            
+  </body>
 </html>
