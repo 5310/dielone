@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    
+  <head>
+      
+    <meta charset="utf-8">
+
+    <title>We All Die Alone</title>
+
+    <link media="screen" rel="stylesheet" href="dielone.css">
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,800italic,800,300,600|Rammetto+One' rel='stylesheet' type='text/css'>
+    
+  </head>
+  
+  <body>
+      
+    
+    <div id="page">
+
+      <div id="mid_panel">
+        <div id="buffer"></div>
+        <div id="title">
+          <div class="label">
+
+            <!-- Game Title: edit this -->
+            <h1>We All Die <span class="red">Alone</span></h1>
+            <h2 id="staticsub">a short cyoa-noir, directed by Scio</h2>
+            <!-- End of Game Title -->
+
+            <noscript><p class="noscript_message">This game requires 
+              Javascript.</p></noscript>
+            
+          </div>
+        </div>
+
+        <div id="content_wrapper">
+          <div id="content">
+          </div>
+          <a name="end_of_content"></a>
+        </div>
+
+        <div id="legal">
+          <!-- Your Copyright: edit this -->
+          <p>Content and additional software and design &copy; 2010 IDM.</p>
+          <!-- End of Your Copyright -->
+
+          <!-- This Copyright line must remain in your final file. -->
+          <p>
+            Parts of the software and design &copy; 2010 IDM. Undum is
+            available
+            <a href="http://github.com/idmillington/undum">here</a>.
+            Derivative works must include this copyright line and link.
+          </p>
+        </div>
+      </div>
+    </div> <!-- End of div.page -->
+
+    <!-- Holds UI elements that will be cloned and placed in the main
+         page. This block itself is always hidden. -->
+    <div id="ui_library">
+      <div id="quality" class="quality">
+        <span class="name" data-attr="name"></span>
+        <span class="value" data-attr="value"></span>
+      </div>
+
+      <div id="quality_group" class="quality_group">
+        <h2 data-attr="title"></h2>
+        <div class="qualities_in_group">
+        </div>
+      </div>
+
+      <div id="progress_bar" class="progress_bar">
+        <span class="name" data-attr="name"></span>
+        <span class="value" data-attr="value"></span>
+        <div class="progress_bar_track">
+          <div class="progress_bar_color" data-attr="width">
+          </div>
+        </div>
+        <span class="left_label" data-attr="left_label"></span>
+        <span class="right_label" data-attr="right_label"></span>
+      </div>
+
+      <hr id="turn_separator">
+    </div>
+
+    <!-- You don't need to have this block here, but it is defined in
+         the CSS file as hidden, so it is a good spot to hide content
+         you want to load from your game code. See the
+         tutorial.game.js file for details of how this is used. -->
+    <div id="content_library">
+    </div>
+
+    <!-- Load the libraries we depend on -->
+    <script type="text/javascript" src="undum.custom.js"></script>
+
+    <!-- Change the name of this file. It is your main game file. -->
+    <script type="text/javascript" src="dielone.js"></script>
+    
+    <!-- Landing initializer -->
+    <script type="text/javascript" >
+        $('#buffer').css("padding-bottom", ($(window).height()-$('#title').outerHeight())/2+"px" ); //TODO
+    </script>
+            
+  </body>
+</html>
