@@ -24,7 +24,7 @@ undum.game.situations =
         I put the overcoat over my shoulder and turn the knob to check. Don’t forget to wedge the ticket stub on the door-frame, all before headin’ downstairs. But truth to tell, I’d be welcome the first burglar for the company alone. The streets may look empty, but shadows stand under every other lamp-post, each with a story to tell...or write, as the case may be. But they don’t concern me anymore tonight. I’m off duty, a free man. No body’s payin’, anyway. 
         </p>
         <p>
-        Where to next? Home? Nah, too late. Been too late for ages. It might be a bit early for Elroy’s all-night <a href="bar">juicer</a>. Then there’s the <a href="diner">diner</a>, or I can get some fresh smog at the <a href="park">park</a>. My choice; I’m a free man.
+        Where to next? Home? Nah, too late. Been too late for ages. It might be a bit early for Elroy’s all-night <a href="bar">juicer</a>. Then there’s the <a href="diner" class="tbw">diner</a>, or I can get some fresh smog at the <a href="park" class="tbw">park</a>. My choice; I’m a free man.
         </p>
         """
     )
@@ -249,7 +249,7 @@ undum.game.situations =
     barexit:           new undum.SimpleSituation(
         """
         <p>
-        At least I had finished my drink. I slapped the roof of my mouth to get rid of the bitter aftertaste, then though better of it and lit a cig to drown it out. The night’s still young, pretty, and her make-up’s still on. Where to next? <a href="park">To the park?</a> A peaceful hour of not being mugged in broad moonlight, if I’m lucky, or maybe <a href="diner">get some grub</a>?
+        At least I had finished my drink. I slapped the roof of my mouth to get rid of the bitter aftertaste, then though better of it and lit a cig to drown it out. The night’s still young, pretty, and her make-up’s still on. Where to next? <a href="park" class="tbw">To the park?</a> A peaceful hour of not being mugged in broad moonlight, if I’m lucky, or maybe <a href="diner" class="tbw">get some grub</a>?
         </p>
         """,
         exit: (character, system, to) ->

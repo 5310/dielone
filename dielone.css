@@ -396,3 +396,8 @@ img.float_center {
 #content {
     font-size: 0.9em;
 }
+
+a.tbw {
+   pointer-events: none;
+   cursor: default;
+}
