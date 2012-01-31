@@ -24,7 +24,7 @@ undum.game.situations =
         I put the overcoat over my shoulder and turn the knob to check. Don’t forget to wedge the ticket stub on the door-frame, all before headin’ downstairs. But truth to tell, I’d be welcome the first burglar for the company alone. The streets may look empty, but shadows stand under every other lamp-post, each with a story to tell...or write, as the case may be. But they don’t concern me anymore tonight. I’m off duty, a free man. No body’s payin’, anyway. 
         </p>
         <p>
-        Where to next? Home? Nah, too late. Been too late for ages. It might be a bit early for Elroy’s all-night <a href="bar">juicer</a>. Then there’s the <a href="diner" class="tbw">diner</a>, or I can get some fresh smog at the <a href="park" class="tbw">park</a>. My choice; I’m a free man.
+        Where to next? Home? Nah, too late. Been too late for ages. It might be a bit early for Elroy’s all-night <a href="bar">juicer</a>. Then there’s the <a href="diner">diner</a>, or I can get some fresh smog at the <a href="park" class="tbw">park</a>. My choice; I’m a free man.
         </p>
         """
     )
@@ -249,7 +249,7 @@ undum.game.situations =
     barexit:           new undum.SimpleSituation(
         """
         <p>
-        At least I had finished my drink. I slapped the roof of my mouth to get rid of the bitter aftertaste, then though better of it and lit a cig to drown it out. The night’s still young, pretty, and her make-up’s still on. Where to next? <a href="park" class="tbw">To the park?</a> A peaceful hour of not being mugged in broad moonlight, if I’m lucky, or maybe <a href="diner" class="tbw">get some grub</a>?
+        At least I had finished my drink. I slapped the roof of my mouth to get rid of the bitter aftertaste, then though better of it and lit a cig to drown it out. The night’s still young, pretty, and her make-up’s still on. Where to next? <a href="park" class="tbw">To the park?</a> A peaceful hour of not being mugged in broad moonlight, if I’m lucky, or maybe <a href="diner">get some grub</a>?
         </p>
         """,
         exit: (character, system, to) ->
@@ -259,9 +259,35 @@ undum.game.situations =
         
     
     
-    diner:              new undum.Situation(
+    diner:              new undum.SimpleSituation(
         """
-        <p>TBW</p>
+        <p>I walk into _____son' All Night Diner through the fancy revolving doors. I see my reflections multiply on the spotless and only slightly scratched panes, and spin away just as fast. Don't trust people in the mirror; the ones that share your face even less.</p>
+        <p>All the lights are on inside. The stove sizzles its low-budget stand-by-simmer, but nobody's home. It's too late for the hungry end-of-shift rush, too early for the nighthawks. I make my way to the table with the least bit of <a href="./window">window</a> access, make sure no furry animals are playing poker under the seats, and sit.<p>
+        <p>I lied. The place isn't empty. Gloria is here. Gloria is always here.</p>
+        <p>“Bacon and eggs, <a href="dineregg">hard-boiled</a>.”</p>
+        """,
+        actions:
+            "window": 
+                """
+                <p>
+                I don't flatter myself into thinking I've made enemies with enough cash to hire a sniper, but you can never be too careful.
+                </p>
+                """
+        ,
+    )
+    dineregg:              new undum.SimpleSituation(
+        """
+        <p>“You are what you eat.”</p>
+        <p>That was Gloria. I didn't spend any effort in telling if she compared me to a pig. I have gotten used to her tongue, one way or the other, and she had gotten used to mine. Nobody could fry an egg quite like her, all grease and charred protein. Sometimes I wonder if she imagined it was her late husband she was cooking on the pan; late Mr. _____son. I new <i>him</i> as Frank. Gloria used to know him as the 'cook', then the 'boss', then as 'husband' for a short while, before knowing him as the 'defendant' in the end. All that grease did him in before the case passed.<p>
+        <p>I never did get to know what those five missing letters stood for.</p>
+        <p>“And you never will, too,” she said, placing the <a href="dinereat">plates</a>.</p>
+        """
+    )
+    dinereat:              new undum.SimpleSituation(
+        """
+        <p>“Don't argue with the someone who brings you food.” That was something I learned in the pen.</P>
+        <p>“Stop it with the words of wisdom, Guy. The worst you've ever gotten from the law is a ticket.”</p>
+        <p>If I didn't know any better, I'd say she was readin' my mind. But nobody who reads minds would slip in a dish of salad with bacon and eggs.<p>
         """
     )
     
@@ -275,7 +301,7 @@ undum.game.situations =
     )
     
     
-    park:               new undum.Situation(
+    park:               new undum.SimpleSituation(
         """
         """,
         enter: (character, system, from) ->
