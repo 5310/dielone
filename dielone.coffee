@@ -1,8 +1,6 @@
 undum.game.id = "e9a7f89d-dbc4-4124-b053-8074ed422f58"
 undum.game.version = "0.1"
 
-
-
 undum.game.situations =
 
 
@@ -32,7 +30,7 @@ undum.game.situations =
     bar:            new undum.SimpleSituation(
         """
         <p>
-        I make way to Elroy’s. Outside dim pink neon-lights blinked, cold from the day’s neglect. Inside the place smelled of day old smoke, booze, and burnt hopes; made me feel right at home. I sat down at my usual seat, which is left to the first one that’s empty or...whichever. Asked Elroy for my <a href="./juice"><i>juice</i></a>.
+        I make way to Elroy’s. Outside dim pink neon-lights blinked, cold from the day’s neglect. Inside the place smelled of day old smoke, booze, and burnt hopes; made me feel right at home. I sat down at my usual seat, which is left to the first one that’s empty or...whichever. Asked Elroy for my <a href="./juice" class='once'><i>juice</i></a>.
         </p>
         """,
         actions:
@@ -251,18 +249,15 @@ undum.game.situations =
         <p>
         At least I had finished my drink. I slapped the roof of my mouth to get rid of the bitter aftertaste, then though better of it and lit a cig to drown it out. The night’s still young, pretty, and her make-up’s still on. Where to next? <a href="park" class="tbw">To the park?</a> A peaceful hour of not being mugged in broad moonlight, if I’m lucky, or maybe <a href="diner">get some grub</a>?
         </p>
-        """,
-        exit: (character, system, to) ->
-            system.setQuality "time", character.qualities.time + 1
-        ,
+        """
     )
         
     
     
     diner:              new undum.SimpleSituation(
         """
-        <p>I walk into _____son' All Night Diner through the fancy revolving doors. I see my reflections multiply on the spotless and only slightly scratched panes, and spin away just as fast. Don't trust people in the mirror; the ones that share your face even less.</p>
-        <p>All the lights are on inside. The stove sizzles its low-budget stand-by-simmer, but nobody's home. It's too late for the hungry end-of-shift rush, too early for the nighthawks. I make my way to the table with the least bit of <a href="./window">window</a> access, make sure no furry animals are playing poker under the seats, and sit.<p>
+        <p>I walk into <a href="./missing" class='once'>_____son's</a> All Night Diner through the fancy revolving doors. I see my reflections multiply on the spotless and only slightly scratched panes, and spin away just as fast. Don't trust people in the mirror; the ones that share your face even less.</p>
+        <p>All the lights are on inside. The stove sizzles its low-budget stand-by-simmer, but nobody's home. It's too late for the hungry end-of-shift rush, too early for the nighthawks. I make my way to the table with the least bit of <a href="./window" class='once'>window</a> access, make sure no furry animals are playing poker under the seats, and sit.<p>
         <p>I lied. The place isn't empty. Gloria is here. Gloria is always here.</p>
         <p>“Bacon and eggs, <a href="dineregg">hard-boiled</a>.”</p>
         """,
@@ -273,6 +268,13 @@ undum.game.situations =
                 I don't flatter myself into thinking I've made enemies with enough cash to hire a sniper, but you can never be too careful.
                 </p>
                 """
+            "missing": 
+                """
+                <p>
+                Not all glowing vinyl letters are created equal. Some fall before their time.
+                </p>
+                """
+                
         ,
     )
     dineregg:              new undum.SimpleSituation(
@@ -287,22 +289,92 @@ undum.game.situations =
         """
         <p>“Don't argue with the someone who brings you food.” That was something I learned in the pen.</P>
         <p>“Stop it with the words of wisdom, Guy. The worst you've ever gotten from the law is a ticket.”</p>
-        <p>If I didn't know any better, I'd say she was readin' my mind. But nobody who reads minds would slip in a dish of salad with bacon and eggs.<p>
+        <p>If I didn't know any better, I'd say she was readin' my mind. But nobody who reads minds would slip in a dish of <a href="./salad" class='once'>salad</a> with bacon and eggs.<p>
+        <p>“You're <a href="dinerwelcome">welcome</a>,” she says. And whirls away, her <a href="./apron" class='once'>apron</a> lashing.</p>
+        """,
+        actions:
+            "salad": 
+                """
+                <p>
+                I never trust greenery I can eat. I rarely see the other kind these days, so I don't complain.
+                </p>
+                """
+            "apron":
+                """
+                <p>It says “kiss the cook.” It could be the same one Frank _____son used to wear...</p>
+                """
+        ,
+    )
+    dinerwelcome:              new undum.SimpleSituation(
+        """
+        <p>They say waiting is a thankless job. Who am I to argue? It's one thing to compliment the <a href="./cook" class='once'>cook</a>. But isn't <a href="dinerthank">thanking</a> the woman who serves you food almost every night a bit <a href="dinernothank" class="tbw">redundant</a>? Should I still <a href="dinersarcasm" class="tbw">say something</a>?</p>
+        """,
+        actions:
+            "cook":
+                """
+                <p>Which is also Gloria, since a certain case of the clogged arteries.</p>
+                """
+    )
+    
+    dinerthank:              new undum.SimpleSituation(
+        """
+        <p>I mumble some grateful words, and cut into the bubbling yellow mass of egg. The sharp intake of breath almost does not register to my ears, but the rest does.</p>
+        <p>“Did you just thank me?” Her tone was less than <i>gracious</i>.</p>
+        <p>“Yes.”</p>
+        <p>“Why?” She asks, sitting on the opposite side. Food occupied my mind, and I tried to let it occupy my mouth. But she would not have it. “Why, Guy? She wasn't trying to rhyme. “You never thank me. Not once. This seems fishy. You're planning something aren't you? What is it?”</p>
+        <p>I chew my bacon, and she chews her lips. I know better than to point out if she looks <a href="./cute" class='once'>cute</a> doing so.</p>
+        <p>“Spit it out, I don't have all day!”</p>
+        <p>“Why waste perfectly good bacon that way?” I decide to <a href="dinerthankwhy">play it safe</a>, and try the lettuce.</p>
+        """,
+        actions:
+            "cute":
+                """
+                <p>She tries. She does. She's been through a lot. She runs the place all by herself. For that, she needs an image. And she'd go as far as to stab my with a spoon if I mention that her youth is slipping though her mask. A knife, if I actually use the word “cute.”</p>
+                """
+    )
+    dinerthankwhy:              new undum.SimpleSituation(
+        """
+        <p>“Is it about money?”</p>
+        <p>I stay quiet, and work on my egg-whites.</p>
+        <p>“No...it's too early in the month for that.”</p>
+        <p>I nod. She knows this <i>professional</i> well.</p>
+        <p>“Are you in trouble again? I can't let you hide out in the freezer, you know.”</p>
+        <p>“I know.” It was the only cooler that wasn't going to be permanent back then.</p>
+        <She fidgets for a while. Tugging at the apron. Tapping her foot. She still has questions for me. Big ones, by the look of things. She shoots.</p>
+        <p>“Are you...trying to flirt with me?”</p>
+        <p>I finish my food. Drink my glass of water. So this is where we end up going. Her face was no redder than usual, with her natural complexion and her working with a stove, but her voice had a timber. She never slips up like this. Is this how it started with Frank? Is that how it ended?</p>
+        <p>What do I answer? Do I tell her she was <a href="dinerthankwhyyes">right</a>? Or be <a href="dinerthankwhyno">frank</a> with it; no pun intended.</p> 
+        """
+    )
+    dinerthankwhyno:              new undum.SimpleSituation(
+        """
+        <p>“No.”</p>
+        <p>What else could I say? She was not a bad looking young woman. Her hair was just the right shade, her hips were just the right shape. Just right without being a show-stopper, or a show-starter, depending on your perspective. But she had a life. She had had a hard one already, but still had one left. A better one, hopefully. Who was I to take it away.
+        Mine is no life for a woman like her. I have nothing to give her.</p>
+        <p>Save for my bill, which I paid with change. There might have been sighs, and complaints that I “don't get no hints.” There might have been rolled eyes, or maybe moist ones. But they couldn't hold me back.</p>
+        <p>I walked back <a href="dinerexit">out</a> the revolving doors, trying not to look at my reflections in the eye.</p>
+        """
+    )
+    dinerthankwhyyes:              new undum.SimpleSituation(
+        """
+        <p>“Yes, love.”</p>
+        <p>She sits perfectly still for, say, three seconds. Then she starts shaking her head, then part her lips, and finally utters, “No. Nah. Nope. Uh-uh. You're lying. It can't be that easy. Where's the seedy double entendre, where's the witty twisted compliment. That's <i>not</i> how you roll, Guy.” She lightly punches the table. Once, twice, thrice. “There's not even cigarette smoke in the air, or any moody lighting, for crying out loud. Where the grit, where's the romance in that?”</p>
+        <p>I shrug. It was worth a try even though I knew she'd see through it just like that. I pay my bills near her elbow which led up to her hand that she used to prop her face up. Her lips almost a gesture of disappointment. Almost, it could even be amusement, women.</p>
+        <p>I didn't say she looked cute back then either. That'd spoil all the work. I just walked <a href="dinerexit">out</a> the revolving doors, paying no heed to the reflections. I's damn sure they were all looking at me funny just like she was.</p>
         """
     )
     
     dinerexit:        new undum.SimpleSituation(
         """
-        <p>TBW</p>
-        """,
-        exit: (character, system, to) ->
-            system.setQuality "time", character.qualities.time + 1
-        ,
+        <p>The air was crisp outside, and colder. I was full, and maybe a little bit empty too.</p>
+        <p>Where now? The <a href="bar">juicer</a> might be the default choice, or maybe I could use an exercise at the <a href="park" class="tbw">park</a>. I had calories to burn and no regrets. Almost.</p>
+        """
     )
     
     
     park:               new undum.SimpleSituation(
         """
+        <p>TBW</p>
         """,
         enter: (character, system, from) ->
             if character.qualities.time <= 1
@@ -323,10 +395,7 @@ undum.game.situations =
     parkexit:        new undum.SimpleSituation(
         """
         <p>TBW</p>
-        """,
-        exit: (character, system, to) ->
-            system.setQuality "time", character.qualities.time + 1
-        ,
+        """
     )
 
 
